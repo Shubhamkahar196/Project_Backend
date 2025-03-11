@@ -1,8 +1,13 @@
 // const express = require("express");
-import express from 'express';   //error aayega to package.json mai "type":"module" likh do error solve ho jayega
+import express from 'express'; 
+  //error aayega to package.json mai "type":"module" likh do error solve ho jayega
+  import cors from 'cors';
 const app = express();
 
-app.get('/jokes',(req,res)=>{
+app.use(cors());
+
+app.get('/api/jokes',(req,res)=>{
+    console.log("received jokes from backend")
     const jokes = [
         {
             id:1,
